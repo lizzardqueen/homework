@@ -1,4 +1,4 @@
-import math
+import random
 
 def proof(n):
     try:
@@ -15,10 +15,29 @@ def proof(n):
         quit()
 
 
-a = input('Введите целое неотрицательное число a: ')
-a = proof(a)
-b = input('Введите целое неотрицательное число b: ')
-b = proof(b)
+def massive(n):
+    a = []
+    for i in range(n):
+        a.append(random.randint(0, 999))
+    return a
 
-print ('a в степени b: %d' %(a ** b))
-print ('логарифм a по основанию b: ' + str((math.log(a,b))))
+def puzurek(a):
+    for i in range(len(a)):
+        min = a[i]
+        b = i
+        for j in range(i+1, len(a)):
+            if a[j] < min:
+                min = a[j]
+                b = j
+        if min != a[i]:
+            a[i],a[b] = a[b],a[i]
+    return a
+
+n = input('Введите целое положительное число: ')
+n = proof(n)
+
+m = massive(n)
+
+print(m)
+print(puzurek(m))
+print(sorted(m))
