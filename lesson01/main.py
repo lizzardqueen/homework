@@ -41,3 +41,8 @@ m = massive(n)
 print(m)
 print(puzurek(m))
 print(sorted(m))
+
+x = 55.362
+print('x = %f' %x)
+print('Целая часть от x: %i' %x)
+print('X с округлением до 1 знака после запятой: %.1f' %x)
